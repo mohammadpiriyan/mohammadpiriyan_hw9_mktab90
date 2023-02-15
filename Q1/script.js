@@ -1,43 +1,12 @@
-let data = {
-  Fish: {
-    trout: {},
-    salmon: {},
-  },
+console.log("mamad");
+let elem = document.getElementById("elem");
+console.log(elem.children);
 
-  Tree: {
-    Huge: {
-      sequoia: {},
-      oak: {},
-    },
-    Flowering: {
-      "apple tree": {},
-      magnolia: {},
-    },
-  },
-};
-
-creatTree = (container, obj) => {
-  container.append(creatTreeDom(obj));
-};
-
-creatTreeDom = (obj) => {
-  console.log( Object.keys(obj))
-  if (!Object.keys(obj).length) return;
-
-  let ul = document.createElement("ul");
-
-  for (let key in obj) {
-    let li = document.createElement("li");
-    li.innerHTML = key;
-
-    let childrenUl = creatTreeDom(obj[key]);
-    if (childrenUl) {
-      li.append(childrenUl);
-    }
-    ul.append(li);
+clear = (elem) => {
+  console.log("salam");
+  for (let i = 0; i < elem.childNodes.length; i++) {
+    console.log(elem.childNodes[i]);
+    elem.childNodes[i].innerHTML = "";
   }
-  return ul;
 };
-
-let container = document.getElementById("container");
-creatTree(container, data);
+clear(elem);
