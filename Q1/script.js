@@ -1,6 +1,6 @@
-let menuElem = document.getElementById('sweeties');
-    let titleElem = menuElem.querySelector('.title');
+container.onclick = function(event) {
+  if (event.target.className != 'remove-button') return;
 
-    titleElem.onclick = function() {
-      menuElem.classList.toggle('open');
-    };
+  let pane = event.target.closest('.pane');
+  pane.remove();
+};
