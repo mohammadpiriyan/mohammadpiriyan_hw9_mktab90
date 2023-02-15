@@ -1,12 +1,43 @@
-let ul = document.createElement("ul");
-document.body.append(ul);
+let data = {
+  Fish: {
+    trout: {},
+    salmon: {},
+  },
 
-while (true) {
-  let data = prompt("لطفا متن خود را وارد کنید", "");
-  if (!data) {
-    break;
+  Tree: {
+    Huge: {
+      sequoia: {},
+      oak: {},
+    },
+    Flowering: {
+      "apple tree": {},
+      magnolia: {},
+    },
+  },
+};
+
+creatTree = (container, obj) => {
+  container.append(creatTreeDom(obj));
+};
+
+creatTreeDom = (obj) => {
+  console.log( Object.keys(obj))
+  if (!Object.keys(obj).length) return;
+
+  let ul = document.createElement("ul");
+
+  for (let key in obj) {
+    let li = document.createElement("li");
+    li.innerHTML = key;
+
+    let childrenUl = creatTreeDom(obj[key]);
+    if (childrenUl) {
+      li.append(childrenUl);
+    }
+    ul.append(li);
   }
-  let li = document.createElement("li");
-  li.textContent = data;
-  ul.append(li);
-}
+  return ul;
+};
+
+let container = document.getElementById("container");
+creatTree(container, data);
