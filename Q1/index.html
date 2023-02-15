@@ -25,8 +25,11 @@
         >
           <h2>رستوران مک دونالد شعبه تهران</h2>
         </div>
-        
-        <div class="d-flex flex-wrap overflow-y-scroll justify-content-center column-gap-4" id="foodsMenu">
+
+        <div
+          class="d-flex flex-wrap overflow-y-scroll justify-content-center column-gap-4"
+          id="foodsMenu"
+        >
           <!-- --------------------------------------------------------------------------------- -->
 
           <!-- <div class="d-flex gap-5 justify-content-center mt-4">
@@ -368,38 +371,54 @@
       <div
         class="mt-5 bg-white-melo rounded-4 w-25 h-50 d-flex flex-column gap-3 p-4"
       >
-        <div class="d-flex">
-          <h5 class="ml-7">جمع کل سفارشات:</h5>
-          <span id="all-price">0</span>
-          <h5>تومان</h5>
+        <div class="d-flex justify-content-between">
+          <div><h5 class="">جمع کل سفارشات:</h5></div>
+          <div class="d-flex align-items-center">
+            <span id="all-price">0</span>
+            <h5>تومان</h5>
+          </div>
         </div>
-        <div class="d-flex">
-          <h5 class="ml-6">حق سرویس و کارمزد:</h5>
-          <span id="serves">0</span>
-          <h5>تومان</h5>
+        <div class="d-flex justify-content-between">
+          <div>
+            <h5>حق سرویس و کارمزد:</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <span id="serves">0</span>
+            <h5>تومان</h5>
+          </div>
         </div>
-        <div class="d-flex">
-          <h5 class="ml-11 ">تخفیف:</h5>
-          <span id="off">0</span>
-          <h5>تومان</h5>
+        <div class="d-flex justify-content-between">
+          <div><h5>تخفیف:</h5></div>
+          <div class="d-flex align-items-center">
+            <span id="off">0</span>
+            <h5>%</h5>
+          </div>
         </div>
         <div>
           <input
+            id="off-input"
             type="text"
             placeholder="کد تخفیف"
             class="w-85 p-1 border-0"
           /><button
+            id="off-check"
             class="bg-red-btn border-0 w-10 p-1 rounded-start-2 btn-hover"
           >
             <img src="img/tick.png" alt="" class="w-75" />
           </button>
         </div>
         <div
-          class="d-flex bg-warning rounded-1 w-100 p-1 align-self-center justify-content-center mt-4"
+          class="d-flex bg-warning rounded-1 w-100 p-1 align-self-center justify-content-center mt-4 justify-content-between"
         >
-          <h5 class="ml-6">مبلغ قابل پرداخت:</h5>
+        <div>
+          <h5>مبلغ قابل پرداخت:</h5>
+        </div>
+        <div class="d-flex align-items-center">
           <span id="pay">0</span>
           <h5>تومان</h5>
+        </div>
+          
+          
         </div>
         <div>
           <button

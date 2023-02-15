@@ -132,19 +132,18 @@ const calculateTotal = function (el, count) {
   setTotalCost(price);
 };
 const decreaseTotal = (el) => {
-    
-    const foodId =
-      +el.parentElement.parentElement.parentElement.parentElement.childNodes[3].children[0].id.slice(
-        -1
-      );
-    const total = document.getElementById(`total-${foodId}`);
-    console.log(total);
-    const price = foods[foodId].price;
-  
-    total.textContent = total.textContent - price;
-    setTotalCosts(price);
-  };
-  let t = [];
+  const foodId =
+    +el.parentElement.parentElement.parentElement.parentElement.childNodes[3].children[0].id.slice(
+      -1
+    );
+  const total = document.getElementById(`total-${foodId}`);
+  console.log(total);
+  const price = foods[foodId].price;
+
+  total.textContent = total.textContent - price;
+  setTotalCosts(price);
+};
+let t = [];
 const setTotalCost = (total) => {
   const all = document.getElementById("all-price");
   const services = document.getElementById("serves");
@@ -159,6 +158,44 @@ const setTotalCost = (total) => {
   const totalS = (services.textContent = totalC * 0.05);
   const totalPay = (pay.textContent = totalC + totalS);
   setOff(totalPay);
+};
+
+const setTotalCosts = (total) => {
+  const all = document.getElementById("all-price");
+  const services = document.getElementById("serves");
+  const pay = document.getElementById("pay");
+  const m = all.textContent - total;
+  t = [];
+  t.push(m);
+  all.textContent = m;
+
+  console.log(m);
+  const totalS = (services.textContent = m * 0.05);
+  const totalPay = (pay.textContent = m + totalS);
+  setOff(totalPay);
+};
+
+const setOff = (total) => {
+  const offValue = document.getElementById("off-input");
+  const offCheck = document.getElementById("off-check");
+  const off = document.getElementById("off");
+  const pay = document.getElementById("pay");
+  offCheck.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const check = offValue.value;
+    if (check == "gold") {
+      off.textContent = 30;
+      Math.abs((pay.textContent = total * 0.7));
+    } else if (check == "silver") {
+      off.textContent = 20;
+      Math.abs((pay.textContent = total * 0.8));
+    } else if (check == "bronze") {
+      off.textContent = 10;
+      Math.abs((pay.textContent = total * 0.9));
+    } else {
+      alert("کد اشتباه لطفا با دقت بیشتری کد را وارد کنید");
+    }
+  });
 };
 
 // const incrementDecrement = (event) => {
