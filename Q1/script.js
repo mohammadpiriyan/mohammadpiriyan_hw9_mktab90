@@ -1,21 +1,11 @@
+const links = document.querySelectorAll("a");
 
 
-const table = document.querySelector("#age-table");
-console.log(table);
-
-const labels = table.querySelectorAll("label");
-console.log(labels);
-
-const age = table.querySelector("td:first-child").innerHTML;
-console.log(age);
-
-
-const form = document.querySelector('[name="search-person"]');
-console.log(form);
-
-const firstInput = form.querySelector("input:first-child");
-console.log(firstInput);
-
-const lastInputs = form.querySelectorAll("input:last-child");
-const lastInput = lastInputs[lastInputs.length - 1];
-console.log(lastInput);
+links.forEach((link) => {
+  if (
+    link.innerHTML.includes("://") &&
+    !link.innerHTML.includes("http://internal.com")
+  ) {
+    link.setAttribute("style", "color:orange;");
+  }
+});
