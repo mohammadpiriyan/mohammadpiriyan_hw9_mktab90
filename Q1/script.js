@@ -1,4 +1,6 @@
-document.getElementById("hider").onclick = () => {
-  document.getElementById("text").hidden = true;
-  document.getElementById("hider").hidden = true;
-};
+let menuElem = document.getElementById('sweeties');
+    let titleElem = menuElem.querySelector('.title');
+
+    titleElem.onclick = function() {
+      menuElem.classList.toggle('open');
+    };

@@ -1,0 +1,9 @@
+.menu ul {
+    margin: 0;
+    list-style: circle;
+    padding-left: 20px;
+    display: none;
+  }
+  .menu.open ul {
+    display: block;
+  } 
