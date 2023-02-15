@@ -1,13 +1,19 @@
 @font-face {
   font-family: "vazir";
-  src: url(/Q1/fonts/Vazir-Variable.ttf);
+  src: url(/Q1/fonts/Vazir-Regular-FD.woff);
 }
-.width-img{
+h5 {
+  font-size: medium !important;
+  font-weight: 900 !important;
+}
+span {
+  font-weight: 900 !important;
+}
+.width-img {
   width: 95px;
 }
 .w-btn {
   width: 20px;
-  
 }
 .btns {
   width: 100px;
@@ -85,10 +91,22 @@ body {
   margin-left: 7rem;
 }
 .ml-8 {
-  margin-left: 7.3rem;
+  margin-left: 8rem;
 }
-.ml-13 {
-  margin-left: 13.2rem;
+.ml-9 {
+  margin-left: 9rem;
+}
+.ml-10 {
+  margin-left: 10rem;
+}
+.ml-11 {
+  margin-left: 11.2rem;
+}
+.ml-12 {
+  margin-left: 12rem;
+}
+.ml-14 {
+  margin-left: 14rem;
 }
 h5 {
   font-size: small;
@@ -122,5 +140,3 @@ h5 {
 *::-webkit-scrollbar-thumb:hover {
   background-color: #c81e1e;
 }
-
-

@@ -144,6 +144,22 @@ const decreaseTotal = (el) => {
     total.textContent = total.textContent - price;
     setTotalCosts(price);
   };
+  let t = [];
+const setTotalCost = (total) => {
+  const all = document.getElementById("all-price");
+  const services = document.getElementById("serves");
+  const pay = document.getElementById("pay");
+  const totalCost = total;
+  t.push(totalCost);
+  const totalC = t.reduce((ec, el) => {
+    return ec + el;
+  }, 0);
+  all.textContent = totalC;
+
+  const totalS = (services.textContent = totalC * 0.05);
+  const totalPay = (pay.textContent = totalC + totalS);
+  setOff(totalPay);
+};
 
 // const incrementDecrement = (event) => {
 //   const target = event.target;
